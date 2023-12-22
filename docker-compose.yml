@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  learning-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    image: sahriar71/learning-backend
+    container_name: learning-backend
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

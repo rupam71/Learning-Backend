@@ -13,7 +13,7 @@ const deleteSubCategory = async (req: Request, res: Response, next: NextFunction
     const subCategory = await Service.deleteSubCategory(id);
     res.status(200).json(subCategory);
   } catch (e: any) {
-    res.status(400).json({ status: 400, message: e.message });
+    next(e);
   }
 };
 

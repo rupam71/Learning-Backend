@@ -11,7 +11,7 @@ const regenerateToken = async (req: Request, res: Response, next: NextFunction) 
     const regenerateToken = await Service.regenerateToken(token, refreshToken);
     res.status(200).json(regenerateToken);
   } catch (e: any) {
-    res.status(400).json({ status: 400, message: e.message });
+    next(e);
   }
 };
 

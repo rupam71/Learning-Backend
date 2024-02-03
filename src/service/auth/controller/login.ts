@@ -15,7 +15,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
     const login = await Service.login({ email, mobile, password });
     res.status(200).json(login);
   } catch (e: any) {
-    res.status(400).json({ status: 400, message: e.message });
+    next(e);
   }
 };
 

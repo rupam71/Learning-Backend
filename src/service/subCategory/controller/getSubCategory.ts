@@ -9,7 +9,7 @@ const getSubCategory = async (req: Request, res: Response, next: NextFunction) =
     const allSubCategory = await Service.getSubCategory({}, page, limit);
     res.status(200).json({ status: 200, data: allSubCategory, message: "Successfully Users Retrieved" });
   } catch (e: any) {
-    res.status(400).json({ status: 400, message: e.message });
+    next(e);
   }
 };
 

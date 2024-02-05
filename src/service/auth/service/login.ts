@@ -16,8 +16,6 @@ const login = async (auth: {email?:string, mobile?:string, password:string}) => 
   // check isVarified        
   // send email
 
-  console.log({user})
-
   const isPasswordOk = await comparePassword(auth.password, user.password)
   if(!isPasswordOk) return { status: 400, data: null, message: `Your password not matched.` };
 

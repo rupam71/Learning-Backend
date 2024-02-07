@@ -36,6 +36,11 @@ jobs:
         run: |
           npm install
           npm ci 
+      # set env
+      - name: create env file
+        run: |
+          touch .env
+          echo JWT=${{ secrets.JWT }} >> .env
       # build and test the apps     
       - name: build & test
         run: |

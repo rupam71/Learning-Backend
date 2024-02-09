@@ -72,8 +72,6 @@ describe("Category", () => {
           .set('authorization', token as string)
           .send(categoryPayload);
 
-          console.log({body})
-
           expect(statusCode).toBe(200)
       });
     });

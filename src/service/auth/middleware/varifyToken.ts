@@ -11,7 +11,6 @@ export const verifyToken = async (req: Request, res: Response, next: NextFunctio
 
     if (decode._id) {
       req.body.user = decode;
-      console.log({ req: req.body });
       next();
     } else {
       return res.status(400).json({ status: 400, message: "Unauthenticated" });

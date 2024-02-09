@@ -4,6 +4,7 @@ const ApplicationLogSchema = new Schema(
   {
     uuid: {
       type: String,
+      required: true
     },
     message: {
       type: String,

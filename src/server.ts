@@ -1,8 +1,15 @@
 import express, { Application, NextFunction, Request, Response } from "express";
 import { uuid } from "uuidv4";
 import eventEmitter from "./eventt";
+import cors from "cors";
 
 const app: Application = express();
+app.use(
+  cors({
+    origin: process.env.CORS_ORIGIN,
+    optionsSuccessStatus: 200,
+  })
+);
 app.use(express.json());
 
 eventEmitter.emit("LOGEVENT");
@@ -32,7 +39,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
     name: err.name,
     stack: err.stack,
   };
-  
+
   eventEmitter.emit("LOGEVENT", log);
   res.status(500).send({ status: 400, message: "Something went wrong!" });
 });

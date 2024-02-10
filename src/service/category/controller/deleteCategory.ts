@@ -1,7 +1,11 @@
 import { Request, Response, NextFunction } from "express";
 import * as Service from "./../service";
 
-const deleteCategory = async (req: Request, res: Response, next: NextFunction) => {
+const deleteCategory = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   const id: string = req.params.id;
 
   try {

@@ -1,5 +1,5 @@
-import mongoose, { Document, Schema } from 'mongoose';
-import { ICategory } from '../type';
+import mongoose, { Document, Schema } from "mongoose";
+import { ICategory } from "../type";
 
 const CategorySchema = new Schema({
   name: {
@@ -9,6 +9,6 @@ const CategorySchema = new Schema({
   },
 });
 
-const Category = mongoose.model<ICategory>('Category', CategorySchema);
+const Category = mongoose.model<ICategory>("Category", CategorySchema);
 
 export default Category;

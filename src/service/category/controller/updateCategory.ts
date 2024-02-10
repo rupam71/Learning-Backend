@@ -1,7 +1,11 @@
 import { Request, Response, NextFunction } from "express";
 import * as Service from "./../service";
 
-const updateCategory = async (req: Request, res: Response, next: NextFunction) => {
+const updateCategory = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   const id: string = req.params.id;
   const name: string = req.body.name;
 

@@ -7,14 +7,22 @@ interface JwtPayload {
   exp: number;
 }
 
-export const adminRoute = async (req: Request, res: Response, next: NextFunction) => {
+export const adminRoute = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   try {
-    console.log({user:req.body.user.type})
     const userType = req.body.user.type;
 
     if (userType === USERTYPE.ADMIN) next();
-    else return res.status(400).json({ status: 400, message: "This is admin protected route." });
+    else
+      return res
+        .status(400)
+        .json({ status: 400, message: "This is admin protected route." });
   } catch (error) {
-    return res.status(400).json({ status: 400, message: "This is admin protected route." });
+    return res
+      .status(400)
+      .json({ status: 400, message: "This is admin protected route." });
   }
 };

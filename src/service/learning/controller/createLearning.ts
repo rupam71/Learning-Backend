@@ -3,8 +3,13 @@ import sendValidationError from "../../../utils/sendValidationError";
 import * as Service from "./../service";
 import { ILearning } from "../type";
 
-const createLearning = async (req: Request, res: Response, next: NextFunction) => {
-  const { category, subCategory, title, description, command } = req.body as ILearning;
+const createLearning = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const { category, subCategory, title, description, command } =
+    req.body as ILearning;
 
   try {
     if (!category) return sendValidationError(res, "Category");

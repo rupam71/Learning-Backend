@@ -9,7 +9,11 @@ const createLearning = async (body: ILearning) => {
     return { status: 400, data: null, message: "Category Not Valid." };
   }
 
-  const isSubCategoryExists = await getSubCategory({ name: body.subCategory }, 1, 10);
+  const isSubCategoryExists = await getSubCategory(
+    { name: body.subCategory },
+    1,
+    10,
+  );
   if (!isSubCategoryExists.length) {
     return { status: 400, data: null, message: "Sub Category Not Valid." };
   }

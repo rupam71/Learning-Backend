@@ -1,7 +1,11 @@
 import { NextFunction, Request, Response } from "express";
 import * as Service from "./../service";
 
-const deleteLearning = async (req: Request, res: Response, next: NextFunction) => {
+const deleteLearning = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   const id: string = req.params.id;
 
   try {

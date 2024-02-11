@@ -3,10 +3,15 @@ import { ILearning } from "../type";
 import sendValidationError from "../../../utils/sendValidationError";
 import * as Service from "./../service";
 
-const updateLearning = async (req: Request, res: Response, next: NextFunction) => {
+const updateLearning = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   const id: string = req.params.id;
 
-  const { category, subCategory, title, description, command } = req.body as ILearning;
+  const { category, subCategory, title, description, command } =
+    req.body as ILearning;
 
   try {
     if (!id) return sendValidationError(res, "Id");

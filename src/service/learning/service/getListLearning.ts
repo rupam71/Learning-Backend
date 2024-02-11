@@ -1,6 +1,12 @@
 import Learning from "../model";
 
-const getListLearning = async (page: number, limit: number, category: string, subCategory: string, search: string) => {
+const getListLearning = async (
+  page: number,
+  limit: number,
+  category: string,
+  subCategory: string,
+  search: string,
+) => {
   try {
     const query: any = {};
     if (category) query.category = category;

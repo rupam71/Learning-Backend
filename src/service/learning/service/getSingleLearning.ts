@@ -4,7 +4,8 @@ const getSingleLearning = async (id: string) => {
   try {
     const learning = await Learning.findById(id);
 
-    if (!learning) return { status: 404, data: null, message: "Learning Not Found." };
+    if (!learning)
+      return { status: 404, data: null, message: "Learning Not Found." };
     return learning;
   } catch (e) {
     throw new Error("Error while Paginating Users");

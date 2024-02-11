@@ -4,7 +4,7 @@ const ApplicationLogSchema = new Schema(
   {
     uuid: {
       type: String,
-      required: true
+      required: true,
     },
     message: {
       type: String,
@@ -18,9 +18,12 @@ const ApplicationLogSchema = new Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
-const ApplicationLog = mongoose.model<any>("ApplicationLog", ApplicationLogSchema);
+const ApplicationLog = mongoose.model<any>(
+  "ApplicationLog",
+  ApplicationLogSchema,
+);
 
 export default ApplicationLog;

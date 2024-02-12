@@ -1,7 +1,11 @@
 import { Request, Response, NextFunction } from "express";
 import * as Service from "./../service";
 
-const updateSubCategory = async (req: Request, res: Response, next: NextFunction) => {
+const updateSubCategory = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   const id: string = req.params.id;
   const name: string = req.body.name;
   const category: string = req.body.category;
@@ -12,11 +16,15 @@ const updateSubCategory = async (req: Request, res: Response, next: NextFunction
       return;
     }
     if (!name) {
-      res.status(400).json({ status: 400, data: null, message: "Name Required" });
+      res
+        .status(400)
+        .json({ status: 400, data: null, message: "Name Required" });
       return;
     }
     if (!category) {
-      res.status(400).json({ status: 400, data: null, message: "Category Required" });
+      res
+        .status(400)
+        .json({ status: 400, data: null, message: "Category Required" });
       return;
     }
 

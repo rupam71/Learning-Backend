@@ -1,5 +1,5 @@
-import mongoose, { Document, Schema } from 'mongoose';
-import { ISubCategory } from '../type';
+import mongoose, { Document, Schema } from "mongoose";
+import { ISubCategory } from "../type";
 
 const SubCategorySchema = new Schema({
   name: {
@@ -9,11 +9,13 @@ const SubCategorySchema = new Schema({
   },
   category: {
     type: String,
-    required: true
+    required: true,
   },
 });
 
-const SubCategory = mongoose.model<ISubCategory>('SubCategory', SubCategorySchema);
+const SubCategory = mongoose.model<ISubCategory>(
+  "SubCategory",
+  SubCategorySchema,
+);
 
 export default SubCategory;
-

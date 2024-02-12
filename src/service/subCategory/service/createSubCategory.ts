@@ -19,7 +19,11 @@ const createSubCategory = async (name: string, category: string) => {
   });
 
   await newSubCategory.save();
-  return { status: 200, data: newSubCategory, message: "Sub Category Created." };
+  return {
+    status: 200,
+    data: newSubCategory,
+    message: "Sub Category Created.",
+  };
 };
 
 export default createSubCategory;

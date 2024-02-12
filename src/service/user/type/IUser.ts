@@ -7,6 +7,7 @@ interface IUser extends Document {
   mobile: string;
   password: string;
   country: string;
+  picture: string;
   isVarified: boolean;
   isActive: boolean;
   isPaid: boolean;

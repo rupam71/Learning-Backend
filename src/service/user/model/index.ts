@@ -21,6 +21,10 @@ const UserSchema = new Schema({
     type: String,
     default: "Bangladesh",
   },
+  picture: {
+    type: String,
+    default: null,
+  },
   isVarified: {
     type: Boolean,
     default: false,

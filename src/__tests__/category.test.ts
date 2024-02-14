@@ -21,7 +21,7 @@ describe("Category", () => {
     const mongoServer = await MongoMemoryServer.create();
 
     await mongoose.connect(mongoServer.getUri());
-    const password = await hashPassword("1234567")
+    const password = await hashPassword("1234567");
     await User.create({
       name: "ali",
       email: "user@gmail.com",
@@ -48,9 +48,13 @@ describe("Category", () => {
     describe("given the category does exists", () => {
       it("should return a 200", async () => {
         const newCategory = await createCategory("Jambura");
-        const { body, statusCode } = await supertest(app).get(`/category?_id=${newCategory.data?._id.toString()}`).expect(200);
+        const { body, statusCode } = await supertest(app)
+          .get(`/category?_id=${newCategory.data?._id.toString()}`)
+          .expect(200);
         expect(statusCode).toBe(200);
-        expect(newCategory.data?._id.toString()).toBe(body.data[0]._id.toString());
+        expect(newCategory.data?._id.toString()).toBe(
+          body.data[0]._id.toString(),
+        );
       });
     });
   });
@@ -65,14 +69,14 @@ describe("Category", () => {
     });
     describe("given the user is logged in", () => {
       it("shouldd return 200 and create category", async () => {
-        const {token} = await login(userPayload);
-        
-        const {statusCode,body} = await supertest(app)
+        const { token } = await login(userPayload);
+
+        const { statusCode, body } = await supertest(app)
           .post("/category")
-          .set('authorization', token as string)
+          .set("authorization", token as string)
           .send(categoryPayload);
 
-          expect(statusCode).toBe(200)
+        expect(statusCode).toBe(200);
       });
     });
   });

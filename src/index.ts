@@ -1,6 +1,5 @@
 import database from "./config/db";
 import server from "./server";
-
 require("dotenv").config();
 
 // MongoDB connection with retry

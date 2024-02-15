@@ -62,7 +62,13 @@ test('but there is a "stop" in Christoph', () => {
 });
 
 // array
-const shoppingList = ["diapers", "kleenex", "trash bags", "paper towels", "milk"];
+const shoppingList = [
+  "diapers",
+  "kleenex",
+  "trash bags",
+  "paper towels",
+  "milk",
+];
 
 test("the shopping list has milk on it", () => {
   expect(shoppingList).toContain("milk");

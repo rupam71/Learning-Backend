@@ -22,7 +22,7 @@ router.get(
   passport.authenticate("google", { session: false }),
   (req, res) => {
     // Successful authentication, redirect or handle the user as desired
-    console.log({ req, res });
+    
     const { token, refreshToken } = req.user as any;
     // res.send(req.user).status(200);
     res.redirect(

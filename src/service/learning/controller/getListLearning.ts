@@ -20,13 +20,11 @@ const getListLearning = async (
       subCategory,
       search,
     );
-    res
-      .status(200)
-      .json({
-        status: 200,
-        data: allLearning,
-        message: "Successfully Learning Retrieved",
-      });
+    res.status(200).json({
+      status: 200,
+      data: allLearning,
+      message: "Successfully Learning Retrieved",
+    });
   } catch (e: any) {
     next(e);
   }

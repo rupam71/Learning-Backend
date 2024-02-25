@@ -14,13 +14,11 @@ const getCategory = async (req: Request, res: Response, next: NextFunction) => {
 
   try {
     const allCategory = await Service.getCategory(query, page, limit);
-    res
-      .status(200)
-      .json({
-        status: 200,
-        data: allCategory,
-        message: "Successfully Users Retrieved",
-      });
+    res.status(200).json({
+      status: 200,
+      data: allCategory,
+      message: "Successfully Users Retrieved",
+    });
   } catch (e: any) {
     next(e);
   }

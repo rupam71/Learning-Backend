@@ -46,7 +46,7 @@ passport.use(
           thiredPartyLogin: true,
         });
       }
-      
+
       done(null, loginInfo);
     },
   ),
@@ -82,6 +82,7 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   };
 
   eventEmitter.emit("LOGEVENT", log);
+  console.log({ log });
   res.status(500).send({ status: 400, message: "Something went wrong!" });
 });
 

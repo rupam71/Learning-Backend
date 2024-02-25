@@ -11,13 +11,11 @@ const getSubCategory = async (
 
   try {
     const allSubCategory = await Service.getSubCategory({}, page, limit);
-    res
-      .status(200)
-      .json({
-        status: 200,
-        data: allSubCategory,
-        message: "Successfully Users Retrieved",
-      });
+    res.status(200).json({
+      status: 200,
+      data: allSubCategory,
+      message: "Successfully Users Retrieved",
+    });
   } catch (e: any) {
     next(e);
   }

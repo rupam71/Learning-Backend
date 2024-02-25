@@ -10,13 +10,11 @@ const getSingleLearning = async (
 
   try {
     const singleLearning = await Service.getSingleLearning(id);
-    res
-      .status(200)
-      .json({
-        status: 200,
-        data: singleLearning,
-        message: "Successfully Learning Retrieved",
-      });
+    res.status(200).json({
+      status: 200,
+      data: singleLearning,
+      message: "Successfully Learning Retrieved",
+    });
   } catch (e: any) {
     next(e);
   }

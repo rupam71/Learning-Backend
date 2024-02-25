@@ -7,6 +7,12 @@ const CategorySchema = new Schema({
     required: true,
     unique: true,
   },
+  desciption: {
+    type: String,
+  },
+  image: {
+    type: String,
+  },
 });
 
 const Category = mongoose.model<ICategory>("Category", CategorySchema);

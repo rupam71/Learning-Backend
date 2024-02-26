@@ -47,7 +47,7 @@ describe("Category", () => {
 
     describe("given the category does exists", () => {
       it("should return a 200", async () => {
-        const newCategory = await createCategory("Jambura");
+        const newCategory = await createCategory({name:"Jambura"});
         const { body, statusCode } = await supertest(app)
           .get(`/category?_id=${newCategory.data?._id.toString()}`)
           .expect(200);
